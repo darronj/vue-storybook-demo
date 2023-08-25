@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/vue3-vite";
+import path from 'path';
+const { loadConfigFromFile, mergeConfig } = require("vite");
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -22,5 +24,17 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  async viteFinal(config, { configType }) {
+    const { config: userConfig } = await loadConfigFromFile(
+      path.resolve(__dirname, "../vite.config.ts")
+    );
+
+    return mergeConfig(config, {
+      ...userConfig,
+      // manually specify plugins to avoid conflict
+      plugins: [],
+    });
+  },
 };
+
 export default config;

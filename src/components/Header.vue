@@ -5,5 +5,10 @@
 </template>
 
 <script lang="ts" setup>
-const { label } = withDefaults(defineProps<{ label: string }>(), { label: '' });
+const { label } = defineProps({
+  label: {
+    type: String,
+    required: true,
+  },
+});
 </script>

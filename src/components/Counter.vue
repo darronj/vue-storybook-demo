@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 border border-primary">
     <div class="flex flex-col  place-items-center ">
-      <Header :label="label"></Header>
+      <Header label="My Counter"></Header>
       <div class="text-center">{{ count }}</div>
       <div class="flex flex-row gap-8">
         <button
@@ -19,10 +19,6 @@
 import Header from '@/components/Header.vue';
 import { useCounterStore } from '@/stores/CounterStore';
 import { storeToRefs } from 'pinia';
-
-const { label } = withDefaults(defineProps<{
-  label: string
-}>(), { label: 'Counter' });
 
 const store = useCounterStore();
 const { count } = storeToRefs(store);

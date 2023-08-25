@@ -6,10 +6,6 @@ import Counter from '@/components/Counter.vue';
 const meta = {
   title: 'Counter',
   component: Counter,
-  argTypes: {
-    label: { control: 'text' },
-  },
-  args: { }, // default value
 } satisfies Meta<typeof Counter>;
 
 export default meta;
