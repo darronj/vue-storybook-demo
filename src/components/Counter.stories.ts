@@ -6,8 +6,9 @@ import Counter from '@/components/Counter.vue';
 const meta = {
   title: 'Counter',
   component: Counter,
-  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
-  // tags: ['autodocs'],
+  argTypes: {
+    label: { control: 'text' },
+  },
   args: { }, // default value
 } satisfies Meta<typeof Counter>;
 
@@ -18,4 +19,4 @@ type Story = StoryObj<typeof meta>;
  * See https://storybook.js.org/docs/vue/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {};
+export const Default: Story = {};

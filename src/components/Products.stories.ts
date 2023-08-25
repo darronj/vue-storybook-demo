@@ -6,9 +6,6 @@ import Products from '@/components/Products.vue';
 const meta = {
   title: 'Products',
   component: Products,
-  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
-  // tags: ['autodocs'],
-  args: { }, // default value
 } satisfies Meta<typeof Products>;
 
 export default meta;
@@ -18,4 +15,4 @@ type Story = StoryObj<typeof meta>;
  * See https://storybook.js.org/docs/vue/api/csf
  * to learn how to use render functions.
  */
-export const Primary: Story = {};
+export const Default: Story = {};
